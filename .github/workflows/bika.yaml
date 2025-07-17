@@ -41,7 +41,7 @@ jobs:
                   DD_BOT_SECRET: ${{ secrets.DD_BOT_SECRET }}
                   QYWX_AM: ${{ secrets.QYWX_AM}}
                   
-            - name: "Create date file and amend last commit"
+            - name: "Update date"
               run: |
                 TZ='Asia/Shanghai' date '+%Y-%m-%d %H:%M:%S' > date
                 git config --global user.email "bot@example.com"
