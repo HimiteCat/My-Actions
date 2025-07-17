@@ -40,4 +40,15 @@ jobs:
                   DD_BOT_TOKEN: ${{ secrets.DD_BOT_TOKEN }}
                   DD_BOT_SECRET: ${{ secrets.DD_BOT_SECRET }}
                   QYWX_AM: ${{ secrets.QYWX_AM}}
+                  
+            - name: "Create date file and amend last commit"
+              run: |
+                TZ='Asia/Shanghai' date '+%Y-%m-%d %H:%M:%S' > date
+                git config --global user.email "bot@example.com"
+                git config --global user.name "bot"
+                git add date
+                git commit --no-edit
+                git push origin master --force-with-lease
+              env:
+                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 #最后推送 2021年9月20日
