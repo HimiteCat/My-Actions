@@ -47,7 +47,7 @@ jobs:
                 git config --global user.email "bot@example.com"
                 git config --global user.name "bot"
                 git add date
-                git commit --no-edit
+                git commit -m "更新编辑日期"
                 git push origin master --force-with-lease
               env:
                 GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
